@@ -13,11 +13,7 @@ const myPromiseApi = url => {
           data += chunk
         })
         resp.on('end', () => {
-          try {
             resolve(JSON.parse(data))
-          } catch (e) {
-            reject('It dun broked')
-          }
         })
       })
       .on('error', err => {
